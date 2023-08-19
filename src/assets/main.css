@@ -1,0 +1,15 @@
+.container {
+  max-width: 768px;
+  width: 100%;
+  margin: auto;
+}
+.unselectable {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+.one_card-shadow {
+  box-shadow: 0px 10px 0px rgba(0, 0, 0, 0.03),
+    0px 20px 0px rgba(0, 0, 0, 0.035), 0px 30px 0px rgba(0, 0, 0, 0.04);
+}
