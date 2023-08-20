@@ -1,86 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Attachments from "./Attachments";
 import ButtonsChat from "./ButtonsChat";
+import { cards } from "../constants";
 
 function CardDetails({ headerId, setCardCount, showAll, toggleCards }) {
-  const cards = [
-    {
-      cardHeading: "Unable to send emails",
-      name: "Honey Arora",
-      cardIssue: " update the ticket #ASC 1304 with a public note",
-      cardDesc:
-        "Microsoft has released new security patch  for the Email Server. We experience  some intermittent issues as the update was being done. Can you please check now if  it is working for you?",
-      attachments: true,
-      buttons: false,
-      type: ["allActivities", "tickets"],
-      headerType: "headerTypeOne",
-    },
-    {
-      cardHeading: "Unable to send emails  two",
-      name: "Honey Arora",
-      cardIssue: " update the ticket #ASC 1304 with a public note",
-      cardDesc:
-        "Microsoft has released new security patch  for the Email Server. We experience  some intermittent issues as the update was being done. Can you please check now if  it is working for you?",
-      attachments: true,
-      buttons: false,
-      type: ["allActivities", "tickets"],
-      headerType: "headerTypeOne",
-    },
-    {
-      cardHeading: "Unable to send emails three",
-      name: "Honey Arora",
-      cardIssue: " update the ticket #ASC 1304 with a public note",
-      cardDesc:
-        "Microsoft has released new security patch  for the Email Server. We experience  some intermittent issues as the update was being done. Can you please check now if  it is working for you?",
-      attachments: true,
-      buttons: false,
-      type: ["allActivities", "tickets"],
-      headerType: "headerTypeOne",
-    },
-    {
-      cardHeading: "Missed a Live chat",
-      name: " Julien",
-      cardIssue: " tired reaching the help-desk  for alive chat",
-      cardDesc: "",
-      attachments: false,
-      buttons: true,
-      type: ["allActivities"],
-      headerType: "headerTypeTwo",
-    },
-    {
-      cardHeading: "",
-      name: "A 88, 2nd floor",
-      cardIssue: " printer not working",
-      cardDesc:
-        "The device required a firmware upgrade. This has been fixed now. Please reach back in you face nay issue.Regards UB",
-      attachments: false,
-      buttons: false,
-      type: ["tickets", "allActivities"],
-      headerType: "headerTypeThree",
-    },
-    {
-      cardHeading: "",
-      name: "A 88, 2nd floor",
-      cardIssue: " printer not working",
-      cardDesc:
-        "The device required a firmware upgrade. This has been fixed now. Please reach back in you face nay issue.Regards UB",
-      attachments: false,
-      buttons: false,
-      type: ["tickets", "allActivities"],
-      headerType: "headerTypeThree",
-    },
-    {
-      cardHeading: "",
-      name: "A 88, 2nd floor",
-      cardIssue: " printer not working",
-      cardDesc:
-        "The device required a firmware upgrade. This has been fixed now. Please reach back in you face nay issue.Regards UB",
-      attachments: false,
-      buttons: false,
-      type: ["tickets", "allActivities"],
-      headerType: "headerTypeThree",
-    },
-  ];
   let [newCard, setNewCard] = useState([]);
   useEffect(() => {
     let headerCards = cards.filter((item) => item.headerType === headerId);
@@ -92,10 +15,10 @@ function CardDetails({ headerId, setCardCount, showAll, toggleCards }) {
   }, [headerId, showAll]);
 
   return (
-    <div className="relative ">
+    <div className="relative ms-0 md:ms-5">
       {newCard.slice(0, showAll ? newCard.length : 1).map((card, index) => (
         <div
-          className={`max-w-[728px] w-full  px-[9px] py-3  bg-white rounded-[10px] shadow justify-start items-end gap-3.5 inline-flex my-4 ${
+          className={`max-w-[671px] w-full  px-[9px] py-3  bg-white rounded-[10px] shadow justify-start items-end gap-3.5 inline-flex my-4 ${
             !showAll && newCard.length > 1
               ? "one_card-shadow"
               : "border border-gray-300"
@@ -108,10 +31,12 @@ function CardDetails({ headerId, setCardCount, showAll, toggleCards }) {
               <div className="text-black text-sm font-medium">
                 {card.cardHeading}
               </div>
-              {showAll && (
+              {showAll && card.cardHeading ? (
                 <span className=" w-[30px] h-[30px] p-2  justify-center items-center gap-0.5 flex text-slate-400">
                   X
                 </span>
+              ) : (
+                ""
               )}
             </div>
             <div>

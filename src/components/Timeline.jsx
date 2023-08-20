@@ -12,7 +12,7 @@ function Timeline({ activeTab }) {
             <div className="w-[684px] text-black text-base font-medium">
               Today
             </div>
-            <div className="w-7 h-7 p-1 md:p-2 rounded-[100px] border border-gray-300 justify-start items-center gap-0.5 inline-flex ">
+            <div className="w-7 h-7 p-1 md:p-2 rounded-[100px] border border-gray-300 justify-start items-center gap-0.5 inline-flex me-1 ">
               <img src={arrowup} alt="arrow-up" />
             </div>
           </div>
