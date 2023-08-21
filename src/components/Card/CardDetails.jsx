@@ -51,14 +51,11 @@ function CardDetails({ headerId, setCardCount, showAll, toggleCards }) {
             <div className="text-gray-500 text-sm font-normal">
               {card.cardDesc}{" "}
             </div>
+
             {card.attachments ? (
               <>
-                {" "}
                 <div className="w-full flex flex-wrap justify-between items-center">
                   <Attachments />
-                  <span className="text-blue-600 text-sm font-normal">
-                    Read more
-                  </span>
                 </div>
               </>
             ) : (

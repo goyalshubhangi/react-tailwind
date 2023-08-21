@@ -102,4 +102,28 @@ const cards = [
     headerType: "headerTypeThree",
   },
 ];
-export { cards, headers };
+const attachments = [
+  {
+    name: "Screenshot.doc",
+    type: "doc",
+  },
+  {
+    name: "Screenshot.pdf",
+    url: "https://example.com/images/img1.jpg",
+    type: "pdf",
+  },
+  {
+    name: "Screenshot.xsl",
+    type: "xlsx",
+  },
+  {
+    name: "Screenshot.xsl",
+    type: "xlsx",
+  },
+  {
+    name: "Screenshot.xsl",
+    type: "xlsx",
+  },
+  // Add more attachment objects as needed
+];
+export { cards, headers, attachments };
