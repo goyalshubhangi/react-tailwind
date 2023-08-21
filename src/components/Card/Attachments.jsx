@@ -15,7 +15,8 @@ function Attachments() {
   const remainingAttachmentsCount =
     allAttachments.length - maxVisibleAttachments;
 
-  const toggleAttachments = () => {
+  const toggleAttachments = (e) => {
+    e.stopPropagation();
     setShowAllAttachments(!showAllAttachments);
   };
   return (

@@ -5,6 +5,7 @@ import { cards } from "../constants";
 
 function CardDetails({ headerId, setCardCount, showAll, toggleCards }) {
   let [newCard, setNewCard] = useState([]);
+  
   useEffect(() => {
     let headerCards = cards.filter((item) => item.headerType === headerId);
     setNewCard(headerCards);
@@ -55,7 +56,7 @@ function CardDetails({ headerId, setCardCount, showAll, toggleCards }) {
             {card.attachments ? (
               <>
                 <div className="w-full flex flex-wrap justify-between items-center">
-                  <Attachments />
+                  <Attachments toggleAttachments={toggleCards} />
                 </div>
               </>
             ) : (
